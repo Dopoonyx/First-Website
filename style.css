@@ -1,63 +1,184 @@
-*,
-html{
-    margin: 0;
-    padding: 0;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
 }
 
-.container-navbar{
-    background-color:rgb(56, 47, 77);
-    width: 100%;
-    height: 10vh;
-}
-
-.ul-navbar {
+body {
+    background-color: rgb(248, 248, 250);
+    min-height: 100vh;
     display: flex;
-    height: 100px;
-    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Nunito", sans-serif;
+}
+
+main {
+    flex: 1;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 96px 24px 48px;
 }
 
-.li-navbar {
-    list-style-type: none;
-    padding: 20px;
-    margin: 5px;
-    color: white;
-    font-size: 30px;
+.home-hero {
+    width: min(100%, 900px);
+    text-align: center;
+    animation: hero-appear 0.8s ease-out both;
 }
 
-.li-navbar:hover {
-    background-attachment: rgb(255, 166, 0);
-    transition: 0.5s ease-in-out;
-    transition-delay: 0.3s;
+.home-hero h1 {
+    margin: 0;
+    color: #20232a;
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    line-height: 1.15;
 }
 
-.a-navbar {
-    color: rgb(255, 255, 255);
+.navbar ul {
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 12px 26px;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 10;
+    top: 16px;
+    left: 50%;
+    max-width: calc(100% - 32px);
+    transform: translateX(-50%);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 999px;
+    background: rgba(181, 222, 255, 0.9);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12px);
+}
+
+ul {
+    list-style: none;
+}
+
+.nav ul li a {
+    color: rgb(65, 64, 64);
+    font-size: 1.1rem;
     text-decoration: none;
 }
 
-.container-content {
-    background-color: aqua;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
+.nav ul li a:hover { 
+    color:#020202;
+    font-size: 1.2rem;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    transition: 0.5s ease-in-out;
+    transition-delay: 0.2ms;
 }
 
-.img-content {
-    height: 80vh;
-    width: 80%;
+
+/* Styling Utama Footer */
+.footer {
+    background-color: #0c1410;
+    margin: 0;
+    color: #e0e0e0;
+    padding: 36px 24px 16px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.container-footer {
-    background-color: blueviolet;
-    height: 10vh;
+/* Container untuk merapikan tata letak kolom */
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 28px;
 }
 
-.isi-footer {
-    display: flex;
-    font-size: 40px;
+/* Lebar masing-masing kolom */
+.footer-col {
+    flex: 1;
+    min-width: 170px;
+}
+
+/* Lebar khusus untuk kolom pertama */
+.footer-about {
+    flex: 1.5;
+}
+
+/* Judul Kolom */
+.footer-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+/* Deskripsi di Kolom 1 (Ukuran diperkecil) */
+.footer-desc {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #b0b0b0;
+}
+
+/* Daftar Navigasi dan Kontak */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    color: #b0b0b0;
+}
+
+/* Tautan pada Footer */
+.footer-links a {
+    color: #b0b0b0;
+    font-size: 15px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Bagian Bawah Footer (Copyright) */
+.footer-bottom {
+    max-width: 1100px;
+    margin: 30px auto 0;
+    padding-top: 16px;
+    border-top: 1px solid #1a2a22;
+    text-align: center;
+    font-size: 0.7rem;
+    color: #888888;
+}
+
+@media (max-width: 600px) {
+    .footer {
+        padding: 28px 18px 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar ul {
+        gap: 16px;
+        padding: 10px 18px;
+    }
+
+    ul li a {
+        font-size: 16px;
+    }
 }
